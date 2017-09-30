@@ -1,13 +1,15 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Product[]|\Cake\Collection\CollectionInterface $products
- */
-?>
+<?= $this->Form->create('Post', ['url' => ['action' => 'search']]) ?>
+    <fieldset>
+        <?php
+            echo $this->Form->control('Search.name');
+            echo $this->Form->control('Search.category_id', ['empty' => 'All', 'options' => $categories]);
+        ?>
+    </fieldset>
+    <?= $this->Form->button(__('Search')) ?>
+<?= $this->Form->end() ?>
+
+<?php if($products) { ?>
 <div class="products index large-12 medium-12 columns content">
-    <h3><?= __('Products') ?></h3>
-    <button ><?= $this->Html->link(__('Search Product'), ['action' => 'search']) ?></button>
-    <button ><?= $this->Html->link(__('New Product'), ['action' => 'add']) ?></button>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -51,3 +53,4 @@
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
 </div>
+<?php } ?>

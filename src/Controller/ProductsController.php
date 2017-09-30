@@ -24,10 +24,8 @@ class ProductsController extends AppController
             'contain' => ['Categories', 'Units']
         ];
         $products = $this->paginate($this->Products);
-        $categories = $this->Products->Categories->find('list', ['limit' => 200]);
-
-        $this->set(compact('products', 'categories'));
-        $this->set('_serialize', ['products', 'categories']);
+        $this->set(compact('products'));
+        $this->set('_serialize', ['products']);
     }
 
     /**
@@ -116,4 +114,47 @@ class ProductsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    function search() {
+        $products = null;
+        $product_name = null;
+        $category_id = null;
+
+        $categories = $this->Products->Categories->find('list', ['limit' => 200]);
+        $this->set(compact('products', 'categories'));
+
+        if ($this->request->is('post')) {
+            if ($this->request->getData('Search.name'))
+                $product_name = $this->request->getData('Search.name');
+            if ($this->request->getData('Search.category_id'))
+                $category_id = $this->request->getData('Search.category_id');
+            if ($category_id && !$product_name)
+                $this->paginate = [
+                    'contain' => ['Categories', 'Units'],
+                    'conditions' =>  ['Products.category_id' => $category_id]
+                ];
+            else if (!$category_id && $product_name)
+                $this->paginate = [
+                    'contain' => ['Categories', 'Units'],
+                    'conditions' =>  ['Products.name LIKE' => '%'.$product_name.'%']
+                ];
+            else if ($category_id && $product_name) {
+                $condition = array (
+                            'AND' => array (['Products.name LIKE' => '%'.$product_name.'%'],
+                                            ['Products.category_id' => $category_id])
+                );
+                $this->paginate = [
+                    'contain' => ['Categories', 'Units'],
+                    'conditions' =>  $condition
+                ];                
+            }
+            else {
+                $this->Flash->error(__('You must enter the keyword or choose the category. Please, try again.'));
+                return;
+            }
+            $products = $this->paginate($this->Products);
+            $this->set(compact('products'));
+            $this->set('_serialize', ['products']);
+        }
+	}
 }
