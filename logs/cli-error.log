@@ -1,0 +1,26 @@
+2017-09-30 06:49:55 Error: [PDOException] SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php on line 47
+Stack Trace:
+#0 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php(47): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Database\Connection.php(368): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Database\Connection.php(387): Cake\Database\Connection->getSchemaCollection()
+#8 D:\xampp\htdocs\warehouse\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(1027): Cake\Database\Connection->schemaCollection()
+#9 D:\xampp\htdocs\warehouse\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(979): Bake\Shell\Task\ModelTask->_getAllTables()
+#10 D:\xampp\htdocs\warehouse\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(209): Bake\Shell\Task\ModelTask->listAll()
+#11 D:\xampp\htdocs\warehouse\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(127): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#12 D:\xampp\htdocs\warehouse\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(110): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'users', 'Users')
+#13 D:\xampp\htdocs\warehouse\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(97): Bake\Shell\Task\ModelTask->bake('Users')
+#14 D:\xampp\htdocs\warehouse\vendor\cakephp\bake\src\Shell\BakeShell.php(257): Bake\Shell\Task\ModelTask->main('Users')
+#15 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Collection\CollectionTrait.php(51): Bake\Shell\BakeShell->Bake\Shell\{closure}('Users', 0)
+#16 D:\xampp\htdocs\warehouse\vendor\cakephp\bake\src\Shell\BakeShell.php(258): Cake\Collection\Collection->each(Object(Closure))
+#17 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Console\Shell.php(494): Bake\Shell\BakeShell->all('users')
+#18 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Console\CommandRunner.php(141): Cake\Console\Shell->runCommand(Array, true)
+#19 D:\xampp\htdocs\warehouse\bin\cake.php(12): Cake\Console\CommandRunner->run(Array)
+#20 {main}
+
+
