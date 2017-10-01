@@ -2380,3 +2380,78 @@ Stack Trace:
 #21 {main}
 
 
+2017-10-01 00:30:30 Warning: Warning (512): Unable to emit headers. Headers sent in file=D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Error\Debugger.php line=850 in [D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 48]
+Request URL: /products/search
+Referer URL: http://localhost/warehouse/products
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 48
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 106
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2017-10-01 00:30:30 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Error\Debugger.php:850) in [D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 148]
+Request URL: /products/search
+Referer URL: http://localhost/warehouse/products
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 148
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 54
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 106
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2017-10-01 00:30:30 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Error\Debugger.php:850) in [D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /products/search
+Referer URL: http://localhost/warehouse/products
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 55
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 106
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2017-10-01 00:30:30 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Error\Debugger.php:850) in [D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /products/search
+Referer URL: http://localhost/warehouse/products
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 55
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 106
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2017-10-01 01:44:30 Error: [ParseError] syntax error, unexpected 'PRODUCTS' (T_STRING), expecting ',' or ';' in D:\xampp\htdocs\warehouse\src\Template\Products\search.ctp on line 58
+Request URL: /products/search
+Referer URL: http://localhost/warehouse/products
+Stack Trace:
+#0 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\View\View.php(1157): Cake\View\View->_evaluate('D:\\xampp\\htdocs...', Array)
+#1 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\View\View.php(765): Cake\View\View->_render('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render(NULL, NULL)
+#3 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(125): Cake\Controller\Controller->render()
+#4 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\ProductsController))
+#5 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Http\BaseApplication.php(103): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#6 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#7 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(107): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#8 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#9 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#11 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(95): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#13 D:\xampp\htdocs\warehouse\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#15 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 D:\xampp\htdocs\warehouse\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 D:\xampp\htdocs\warehouse\webroot\index.php(40): Cake\Http\Server->run()
+#18 {main}
+
+

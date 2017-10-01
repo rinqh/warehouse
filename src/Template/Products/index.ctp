@@ -4,10 +4,15 @@
  * @var \App\Model\Entity\Product[]|\Cake\Collection\CollectionInterface $products
  */
 ?>
-<div class="products index large-12 medium-12 columns content">
+<nav class="large-3 medium-4 columns" id="actions-sidebar">
+    <ul class="side-nav">
+        <li class="heading"><?= __('Actions') ?></li>
+        <li><?= $this->Html->link(__('Search Product'), ['action' => 'search']) ?></li>
+        <li><?= $this->Html->link(__('New Product'), ['action' => 'add']) ?></li>
+    </ul>
+</nav>
+<div class="products index large-9 medium-8 columns content">
     <h3><?= __('Products') ?></h3>
-    <button ><?= $this->Html->link(__('Search Product'), ['action' => 'search']) ?></button>
-    <button ><?= $this->Html->link(__('New Product'), ['action' => 'add']) ?></button>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>

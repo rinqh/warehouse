@@ -4,20 +4,19 @@
  * @var \App\Model\Entity\User[]|\Cake\Collection\CollectionInterface $users
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="large-2 medium-3 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="users index large-9 medium-8 columns content">
+<div class="users index large-10 medium-9 columns content">
     <h3><?= __('Users') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('username') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('password') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('fullname') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('avatar') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('birthday') ?></th>
@@ -30,7 +29,6 @@
             <tr>
                 <td><?= $this->Number->format($user->id) ?></td>
                 <td><?= h($user->username) ?></td>
-                <td><?= h($user->password) ?></td>
                 <td><?= h($user->fullname) ?></td>
                 <td><?= h($user->avatar) ?></td>
                 <td><?= h($user->birthday) ?></td>

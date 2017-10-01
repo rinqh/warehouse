@@ -121,7 +121,9 @@ class ProductsController extends AppController
         $category_id = null;
 
         $categories = $this->Products->Categories->find('list', ['limit' => 200]);
-        $this->set(compact('products', 'categories'));
+        $this->paginate = [
+            'contain' => ['Categories', 'Units']
+        ];
 
         if ($this->request->is('post')) {
             if ($this->request->getData('Search.name'))
@@ -148,13 +150,10 @@ class ProductsController extends AppController
                     'conditions' =>  $condition
                 ];                
             }
-            else {
-                $this->Flash->error(__('You must enter the keyword or choose the category. Please, try again.'));
-                return;
-            }
-            $products = $this->paginate($this->Products);
-            $this->set(compact('products'));
-            $this->set('_serialize', ['products']);
         }
+        $products = $this->paginate($this->Products);
+        $this->set(compact('products', 'categories'));
+        $this->set('_serialize', ['products']);
+        
 	}
 }
